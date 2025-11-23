@@ -33,10 +33,10 @@ def get_commits(url):   #enter api python package url here
             next_page=session.get(next_page_url, headers=GITHUB_AUTH_HEADER, params=params)
             yield next_page
         except KeyError:
-            print("No more pages to fetch.")
+            logger.info("No more pages to fetch.")
             break
         except requests.RequestException as e:
-            print(f"An error occurred: {e}")
+            logger.error(f"An error occurred while fetching commits: {e}")
             break
 
 def create_table():
