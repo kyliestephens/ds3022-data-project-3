@@ -17,6 +17,12 @@ Main skills used: Kafka streaming and consumer, DuckDB, transformations + basic 
 - DBT was giving me issues so I used prefect for flows instead
 - Needed to run "docker compose up -d" twice in order to get kafka running (only zookeeper would run the first time)
 
+## Order of scripts
+- first: extract (run flight-streaming.py first after docker compose up -d, then run consumer.py in a different terminal simultaneously)
+- second: transform script in transformation directory
+- third: analysis scripts in that directory (order does not actually matter- depends on what insights you want)
+
 
 ## Github Repository Link: 
 https://github.com/kyliestephens/DP3
+
